@@ -1,0 +1,16 @@
+name: Auto Comment
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto Comment on PR
+        uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          pullRequestOpened: |
+            [Auto-Comment]: Thank you for submitting your pull request! 🙌 We'll review it as soon as possible. In the meantime, please ensure that your changes align with our CONTRIBUTING.md. If there are any specific instructions or feedback regarding your PR, we'll provide them here. Thanks again for your contribution! 😊
