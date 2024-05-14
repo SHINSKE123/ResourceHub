@@ -18,7 +18,7 @@ jobs:
       run: |
         COMMENT=$(cat <<EOF
         {
-          "body": "[Auto-Comment]: 🚀 A new pull request has been created! Thank you for taking the time to contribute to our project. We will review your changes shortly. If you have any questions or need assistance, please let us know. Happy coding! 🎉"
+          "body": "[Auto-Comment]: Thank you for submitting your pull request! 🙌 We'll review it as soon as possible. In the meantime, please ensure that your changes align with our <a href="https://github.com/your-repo/your-project/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. If there are any specific instructions or feedback regarding your PR, we'll provide them here. Thanks again for your contribution! 😊"
         }
         EOF
         )
