@@ -1,25 +1,24 @@
-name: Auto Comment on PR Merge
+name: Auto Comment on PR Generation
 
 on:
   pull_request:
-    types: [closed]
+    types: [opened]
 
 jobs:
   comment:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Add Comment to Issue
+    - name: Add Comment to Pull Request
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         COMMENT=$(cat <<EOF
         {
-          "body": "[Auto-Comment]: 🎉 Your pull request has been successfully merged! 🎉 Thank you for your valuable contribution to our project. Your efforts are greatly appreciated. Feel free to reach out if you have any more contributions or if there's anything else we can assist you with. Keep up the fantastic work! 🚀"
+          "body": "[Auto-Comment]: 🚀 A new pull request has been created! Thank you for taking the time to contribute to our project. We will review your changes shortly. If you have any questions or need assistance, please let us know. Happy coding! 🎉"
         }
         EOF
         )
